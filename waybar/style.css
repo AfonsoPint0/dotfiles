@@ -1,0 +1,92 @@
+@import url("../../.cache/wal/colors-waybar.css");
+
+* {
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  color: #fff;
+}
+
+window#waybar {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  padding: 0 20px;
+  margin: 0 5px;
+  border-radius: 12px;
+}
+
+button:hover {
+    background: inherit;
+  /*  box-shadow: inset 0 -3px #ffffff;*/
+}
+
+/* left */
+#workspaces {	
+}
+#workspaces button {
+  /* to reset fkd up default stuff */
+  box-shadow: none;
+  text-shadow: none;
+  /**/
+  
+  color: #fff;
+  font-size: 20px;
+  border-radius: 3px;
+  padding: 0 5px;
+  margin: 7px 5px;  
+}
+#workspaces button.active {
+  background-color: alpha(@color3, 0.9);
+}
+#workspaces button.focused{
+  background-color: @color3;	
+}
+#workspaces button:hover{
+  background-color: @color3;	
+}
+
+/* middle */
+#clock { 
+  font-size: 20px;
+}
+#custom-weather {
+  padding: 0 10px;
+}
+
+/* right */
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#custom-weather,
+#clock{
+  padding: 0 10px;
+}
+
+#cpu:hover,
+#memory:hover,
+#network:hover,
+#pulseaudio:hover,
+#custom-weather:hover,
+#clock:hover {
+  margin: 7px 0;
+	border-radius: 3px;
+	background: alpha(@color3, 0.5); 
+}
+
+#cpu.critical {
+	background-color: #e06c75;
+  color: #ffffff;
+}
+
+#network.disconnected {
+  background-color: #f53c3c;
+}
+

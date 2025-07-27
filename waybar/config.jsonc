@@ -1,0 +1,95 @@
+{
+  "layer": "top",
+  "spacing": 5,
+  "height": 40,
+
+  "margin-top": 0,
+  "margin-right": 0,
+  "margin-bottom": 0,
+  "margin-left": 0,
+
+  "modules-left": [
+	  "hyprland/workspaces"
+  ],
+
+  "modules-center": [
+	  "custom/weather",
+	  "clock"
+  ],
+
+  "modules-right": [
+    "cpu",
+    "memory",
+    "network",
+    "pulseaudio",
+	  "weather"
+  ],
+
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "tooltip": false
+  },
+
+  "tray": {
+    "spacing": 10,
+    "tooltip": false
+  },
+
+    "cpu": {
+        "format": "",
+        "format-alt": "{usage}% ",
+	"interval": 2,
+        "states": {
+            "critical": 90
+        }
+    },
+
+  "memory": { 
+	  "format": "",
+    "format-alt": "{percentage}% ",
+	  "interval": 2,
+    "states": {
+      "critical": 80
+    }
+  },
+
+  "network": {
+    "format-ethernet": "",
+	  "format-alt": "{bandwidthDownBits} ", 
+    "format-disconnected" : "no network",
+    "interval": 5,
+    "tooltip": false
+  },
+
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    /*"format-source": "{volume}% ",
+    "format-source-muted": "",*/
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "clock": {
+    "format": "{:%b %d %H:%M}",
+    "format-alt": "{:%H:%M - %a, %d/%m/%Y}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  "custom/weather": {
+    "exec": "python3 ~/.config/scripts/waybar/weather.py",
+    "interval": 10,
+    "return-type": "json"
+  }
+}
