@@ -1,3 +1,5 @@
+import sys
+from pathlib import Path
 import json
 import requests
 
@@ -30,7 +32,11 @@ def get_weather_icon(weather_id: int) -> str:
         case _:
             return ""
 
-API_KEY = ''
+tools_path = Path(__file__).resolve().parent.parent / "tools"
+sys.path.insert(0, str(tools_path))
+import getApiKey
+
+API_KEY = getApiKey.get_key_from_json("key")
 CITY = 'Lisbon'
 URL = f'http://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={API_KEY}&units=metric'
 
