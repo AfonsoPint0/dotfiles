@@ -4,11 +4,14 @@ require('dashboard').setup {
     header = {
       '',
       '',
+      '----------',
+      '| Neovim |',
+      '----------',
       '',
-      'Neovim',
     },
     center = { 
-      { icon = '  ', desc = 'Find file', action = 'Telescope find_files', shortcut = 'SPC f f' }, 
+      { icon = '  ', desc = 'Find file', action = 'Telescope find_files', shortcut = 'SPC f f' },
+      { icon = '➕ ', desc = 'New file', action = 'enew', shortcut = 'SPC f n' },  
     },
   }
 }

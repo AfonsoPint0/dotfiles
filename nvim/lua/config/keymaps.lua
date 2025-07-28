@@ -7,7 +7,8 @@ wk.add({
 	{ "<leader>s", group = "scripts" }
 })
 
--- Tabs
+-- Files & Tabs
+vim.keymap.set('n', '<leader>fn', ':enew<CR>', { desc = 'New File'})
 vim.keymap.set('n', '<Leader>tn', ':tabnew<CR>',   { silent = true, desc = 'New Tab' })
 vim.keymap.set('n', '<Leader>tc', ':tabclose<CR>', { silent = true, desc = 'Close Tab' })
 vim.keymap.set('n', '<Leader>to', ':tabonly<CR>',  { silent = true, desc = 'Close Other Tabs' })
