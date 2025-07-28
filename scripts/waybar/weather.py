@@ -30,7 +30,7 @@ def get_weather_icon(weather_id: int) -> str:
         case _:
             return ""
 
-API_KEY = '00a3eb5d0edd8a003aa73d68dc866be3'  # <- Replace this with your real API key
+API_KEY = ''
 CITY = 'Lisbon'
 URL = f'http://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={API_KEY}&units=metric'
 
